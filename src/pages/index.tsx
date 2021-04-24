@@ -7,6 +7,7 @@ import Image from 'next/image'
 import Link from 'next/link';
 import { useContext } from 'react';
 import { PlayerContext } from '../contexts/Player.context';
+import Head from 'next/head';
 
 // utils
 import { convertDurationToTimeString } from '../utils/convertDurationToTimeString.utils';
@@ -18,15 +19,20 @@ import { IHomeProps, IEpisode} from '../interfaces/HomeProps.interface'
 import styles from '../styles/home.module.scss';
 
 export default function Home({ allEpisodes, latestEpisodes }: IHomeProps) {
-  const { play } = useContext(PlayerContext)
+  const { playList } = useContext(PlayerContext);
+  const episodeList = [...latestEpisodes, ...allEpisodes];
 
   return (
     <div className={styles.homepage}>
+      <Head>
+        <title>Home | Podcaster</title>
+      </Head>
+
       <section className={styles.latestEpisodes}>
          <h2>ultimos lancamentos</h2>
 
          <ul>
-          {latestEpisodes.map((episode: IEpisode) => {
+          {latestEpisodes.map((episode: IEpisode, index: number) => {
             return(
               <li key={episode.id}>
                 <Image width={192} height={192} objectFit="cover" src={episode.thumbnail} alt=""/>
@@ -40,7 +46,7 @@ export default function Home({ allEpisodes, latestEpisodes }: IHomeProps) {
                   <span>{episode.durationAsString}</span>
                 </div>
 
-                <button type='button' onClick={() => play(episode)}>
+                <button type='button' onClick={() => playList(episodeList, index)}>
                   <img src="/play-green.svg " alt=""/>
                 </button>
 
@@ -63,7 +69,7 @@ export default function Home({ allEpisodes, latestEpisodes }: IHomeProps) {
           </thead>
           <tbody>
             {
-              allEpisodes.map((episode: IEpisode) => {
+              allEpisodes.map((episode: IEpisode, index: number) => {
                 return (
                   <tr key={episode.id}>
                     <td style={{width: 72}}><Image width={120} height={120} src={episode.thumbnail} objectFit='cover'/></td>
@@ -73,7 +79,9 @@ export default function Home({ allEpisodes, latestEpisodes }: IHomeProps) {
                     <td>{episode.members}</td>
                     <td style={{width: 100}}>{episode.publishedAt}</td>
                     <td>{episode.durationAsString}</td>
-                    <td><button type='button'><img src="/play-green.svg" alt=""/></button></td>
+                    <td><button type='button' onClick={() => playList(episodeList, index + latestEpisodes.length)}>
+                      <img src="/play-green.svg" alt=""/>
+                    </button></td>
                   </tr>
                 )
               })

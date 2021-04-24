@@ -4,6 +4,8 @@ import ptBr from 'date-fns/locale/pt-BR';
 import { GetStaticPaths, GetStaticProps } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
+import { usePlayer } from '../../contexts/Player.context';
+import Head from 'next/head';
 
 // services
 import { api } from '../../services/api.services';
@@ -12,20 +14,25 @@ import { api } from '../../services/api.services';
 import { convertDurationToTimeString } from '../../utils/convertDurationToTimeString.utils';
 
 // interfaces
-import { IOnlyEpisodi } from '../../interfaces/Episode.interface';
+import { IOnlyEpisode } from '../../interfaces/Episode.interface';
 
 // styles
 import styles from './episode.module.scss';
 
-export default function Episode({ episode } : IOnlyEpisodi){
+export default function Episode({ episode } : IOnlyEpisode){
+  const { play } = usePlayer();
+
   return(
     <div className={styles.episode}>
+      <Head>
+        <title>{episode.title} | Podcaster</title>
+      </Head>
       <div className={styles.thumbinailContainer}>
         <Link href='/' >
           <button><img src="/arrow-left.svg" alt=""/></button>
         </Link>
         <Image width={700} height={160} src={episode.thumbnail} objectFit='cover' />
-        <button type='button'><img src="/play.svg" alt=""/></button>
+        <button type='button'><img src="/play.svg" alt="" onClick={() => play(episode)}/></button>
       </div>
 
       <header>

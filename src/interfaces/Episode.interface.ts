@@ -7,6 +7,8 @@ export interface IEpisode {
   thumbnail: string;
   description: string;
   durationAsString: string;
+  duration: number;
+  url: string;
   file: {
     url: string;
     type: string;
@@ -14,6 +16,6 @@ export interface IEpisode {
   }
 }
 
-export interface IOnlyEpisodi {
+export interface IOnlyEpisode {
   episode : IEpisode;
 }
