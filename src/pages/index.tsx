@@ -5,6 +5,8 @@ import { format, parseISO } from 'date-fns';
 import ptBr from 'date-fns/locale/pt-BR';
 import Image from 'next/image'
 import Link from 'next/link';
+import { useContext } from 'react';
+import { PlayerContext } from '../contexts/Player.context';
 
 // utils
 import { convertDurationToTimeString } from '../utils/convertDurationToTimeString.utils';
@@ -16,6 +18,8 @@ import { IHomeProps, IEpisode} from '../interfaces/HomeProps.interface'
 import styles from '../styles/home.module.scss';
 
 export default function Home({ allEpisodes, latestEpisodes }: IHomeProps) {
+  const { play } = useContext(PlayerContext)
+
   return (
     <div className={styles.homepage}>
       <section className={styles.latestEpisodes}>
@@ -36,7 +40,7 @@ export default function Home({ allEpisodes, latestEpisodes }: IHomeProps) {
                   <span>{episode.durationAsString}</span>
                 </div>
 
-                <button type='button'>
+                <button type='button' onClick={() => play(episode)}>
                   <img src="/play-green.svg " alt=""/>
                 </button>
 
