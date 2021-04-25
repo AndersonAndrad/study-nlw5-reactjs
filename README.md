@@ -1,34 +1,81 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<h1 align="center">Welcome to PodCast NLW#5 👋</h1>
+<p>
+  <img alt="Version" src="https://img.shields.io/badge/version-0.0.1-blue.svg?cacheSeconds=2592000" />
+  <a href="#" target="_blank">
+    <img alt="License: mit" src="https://img.shields.io/badge/License-mit-yellow.svg" />
+  </a>
+</p>
 
-## Getting Started
 
-First, run the development server:
 
-```bash
-npm run dev
-# or
-yarn dev
+
+## Summary
+
+- [Why this project](#why-this-project)
+- [Why I used these technologies](#why-i-used-these-technologies)
+- [How to use](#how-to-use)
+- [👤 Authors](#👤-Authors)
+
+---------------------------------------
+
+## Why this project
+
+Project developed for posting podcasts and listening to podcasts directly on the website.
+
+## Why I used these technologies
+
+- [NextJs](https://nextjs.org/)
+- [scss](https://sass-lang.com/)
+- [date-fns](https://date-fns.org/)
+- [axios](https://github.com/axios/axios)
+- [TypeScript](https://www.typescriptlang.org/)
+- [json-server](https://www.npmjs.com/package/json-server)
+- [rc-slider](https://www.npmjs.com/package/rc-slider)
+
+## How to use
+
+All application data is mock, please, use the command to execute to mock
+
+```sh
+yarn mock
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### install
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+```sh
+yarn install
+```
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+### usage
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+```sh
+yarn dev (to develop new features) or yarn start (to producion application)
+```
 
-## Learn More
+### test
 
-To learn more about Next.js, take a look at the following resources:
+```sh
+there is no tests
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+-----------------------
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## 👤 Authors
 
-## Deploy on Vercel
+|                                                              |
+| :----------------------------------------------------------- |
+| Github: [@AndersonAndrad](https://github.com/AndersonAndrad) |
+| LinkedIn: [@AndersonAndrad](https://linkedin.com/in/AndersonAndrad) |
+| <img src="https://avatars0.githubusercontent.com/u/31743641?s=400&u=b6d9e1c428279846440325b0fae90f4b9c4d1d98&v=4" width="110"> |
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+--------------
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## 🤝 Contributing
+
+Contributions, issues and feature requests are welcome!<br />Feel free to check [issues page](https://github.com/AndersonAndrad/study-nlw5-reactjs/issues). 
+
+------------------------------
+
+## Show your support
+
+Give a ⭐️ if this project helped you!
