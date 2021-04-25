@@ -6,7 +6,8 @@
   </a>
 </p>
 
-
+<img alt="Version" src="https://github.com/AndersonAndrad/study-nlw5-reactjs/blob/main/images-documentation/home.png" />
+<img alt="Version" src="https://github.com/AndersonAndrad/study-nlw5-reactjs/blob/main/images-documentation/podcast-onplay.png" />
 
 
 ## Summary
